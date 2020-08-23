@@ -19,7 +19,7 @@ miro.onReady(() => {
                   tooltip: 'Estimate',
                   svgIcon: Config.icon,
                   onClick: async (widgets) => {
-                    await miro.board.ui.openModal('modal.html', Config.modal_options)
+                    await miro.board.ui.openModal('public/modal.html', Config.modal_options)
                   }
               }])
           }
