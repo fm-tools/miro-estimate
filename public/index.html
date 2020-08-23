@@ -2,43 +2,6 @@
 <html lang="en">
 <head>
     <script type="text/javascript" src="https://miro.com/app/static/sdk.1.1.js"></script>
-    <script type="text/javascript" src="config.js"></script>
-    <script type="text/javascript">
-
-        miro.onReady(async () => {
-            miro.initialize({
-                extensionPoints: {
-                    bottomBar: async () => {
-                        return {
-                            title: 'Estimate',
-                            svgIcon: Config.icon,
-                            onClick: async () => {
-                                return miro.board.ui.openLeftSidebar('sidebar.html'); 
-                            }
-                        }
-                    },
-                    getWidgetMenuItems: (widgets) => {
-
-                        const supportedWidgetsInSelection = widgets
-                            .filter((widget) => Config.supported_widgets[widget.type.toLowerCase()] !== undefined);
-
-                        // All selected widgets have to be supported in order to show the menu
-                        if (supportedWidgetsInSelection.length == widgets.length) {
-                            return Promise.resolve([{
-                                tooltip: 'Estimate',
-                                svgIcon: Config.icon,
-                                onClick: async (widgets) => {
-                                    return miro.board.ui.openModal('modal.html', Config.modal_options);
-                                }
-                            }])
-                        }
-
-                        // Not all selected widgets are supported, we won't show the menu
-                        return Promise.resolve([{}]);
-                    }
-                }
-            });
-        });
-    </script>
+    <script type="text/javascript" src="main.js"></script>
 </head>
 </html>
