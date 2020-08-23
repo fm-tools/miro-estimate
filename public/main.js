@@ -18,7 +18,7 @@ miro.onReady(() => {
               return {
                   tooltip: 'Estimate',
                   svgIcon: Config.icon,
-                  onClick: async (widgets) => {
+                  onClick: (widgets) => {
                     miro.board.ui.openModal('public/modal.html', Config.modal_options)
                   }
               }
