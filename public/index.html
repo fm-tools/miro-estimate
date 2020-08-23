@@ -13,8 +13,8 @@
                             title: 'Estimate',
                             svgIcon: Config.icon,
                             onClick: async () => {
-                                await handleAuthAndOpenWindow(openEstimateSidebar);
-                            },
+                                return miro.board.ui.openLeftSidebar('sidebar.html'); 
+                            }
                         }
                     },
                     getWidgetMenuItems: (widgets) => {
@@ -28,7 +28,7 @@
                                 tooltip: 'Estimate',
                                 svgIcon: Config.icon,
                                 onClick: async (widgets) => {
-                                    await handleAuthAndOpenWindow(openEstimateModal, widgets);
+                                    return miro.board.ui.openModal('modal.html', Config.modal_options);
                                 }
                             }])
                         }
@@ -38,63 +38,7 @@
                     }
                 }
             });
-
-            // socketOpenListener = function() {
-            //     socket.onmessage = async function(message) {
-            //         if (message.data == "data_changed") {
-            //             await miro.broadcastData("change_notification");
-            //         }
-            //     }
-            // };
-
-            // await authenticateAndOpenWebsocketConnection();
-
-            // miro.addListener('WIDGETS_DELETED', async function(event) {
-            //     await sendMessageToWebsocket("data_changed");
-            // });
-
-            // miro.addListener('WIDGETS_CREATED', async function(event) {
-            //     await sendMessageToWebsocket("data_changed");
-            // });
         });
-
-        /**
-         * Modal opener
-         */
-        async function openEstimateModal(widget) {
-            return miro.board.ui.openModal('modal.html', Config.modal_options)
-                .then(() => {
-                    // Inform others, that the data has changed
-                    //sendMessageToWebsocket("data_changed")
-                });
-        }
-
-        /**
-         * Sidebar opener
-         */
-        async function openEstimateSidebar() {
-            return miro.board.ui.openLeftSidebar('sidebar.html');
-        }
-
-        /**
-         * Unified function that handles implicit auth flow and opens appropriate window afterwards
-         *
-         * @param opener
-         * @param attribute
-         * @returns {Promise<void>}
-         */
-        async function handleAuthAndOpenWindow(opener, attribute) {
-            if (await miro.isAuthorized()) {
-                await opener(attribute);
-            // } else {
-            //     miro.board.ui.openModal('auth/not-authorized.html')
-            //         .then(async response => {
-            //             if (response === 'success') {
-            //                 await opener(attribute);
-            //             }
-            //         })
-            }
-        }
     </script>
 </head>
 </html>
