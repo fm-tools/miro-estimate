@@ -15,17 +15,17 @@ miro.onReady(() => {
 
           // All selected widgets have to be supported in order to show the menu
           if (supportedWidgetsInSelection.length == widgets.length) {
-              return Promise.resolve([{
+              return {
                   tooltip: 'Estimate',
                   svgIcon: Config.icon,
                   onClick: async (widgets) => {
-                    await miro.board.ui.openModal('public/modal.html', Config.modal_options)
+                    miro.board.ui.openModal('public/modal.html', Config.modal_options)
                   }
-              }])
+              }
           }
 
           // Not all selected widgets are supported, we won't show the menu
-          return Promise.resolve([{}]);
+          return {};
       }
       }
     })
