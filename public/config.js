@@ -12,9 +12,9 @@ const Config = {
         width: 300,
         height: 250
     },
-    team_api: 'https://fm-tools.github.io/miro-estimate/team',
-    auth_api: 'https://fm-tools.github.io/miro-estimate/auth',
-    websocket: 'wss://fm-tools.github.io/miro-estimate/',
+    team_api: 'https://fm-tools.github.io/miro-estimate/public/team',
+    auth_api: 'https://fm-tools.github.io/miro-estimate/public/auth',
+    websocket: 'wss://fm-tools.github.io/miro-estimate/public/',
     supported_widgets: {
         text: 'plainText',
         image: 'title',
