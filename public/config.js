@@ -1,5 +1,5 @@
 const Config = {
-    app_id: '3074457347027426511',
+    app_id: '3074457349449985399',
     icon: '<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">\n'
         + '    <g id="icon-24" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd">\n'
         + '        <path d="M12 12 L 12 4 M12 12 L 18 12"/>\n'
@@ -12,9 +12,9 @@ const Config = {
         width: 300,
         height: 250
     },
-    team_api: 'https://miro-estimate.glitch.me/team',
-    auth_api: 'https://miro-estimate.glitch.me/auth',
-    websocket: 'wss://miro-estimate.glitch.me/',
+    team_api: 'https://fm-tools.github.io/miro-estimate/team',
+    auth_api: 'https://fm-tools.github.io/miro-estimate/auth',
+    websocket: 'wss://fm-tools.github.io/miro-estimate/',
     supported_widgets: {
         text: 'plainText',
         image: 'title',
