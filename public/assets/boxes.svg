@@ -1,22 +1,17 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" version="1.1">
-
- <defs>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="160px" height="160px" viewBox="0 0 160 160">
+  <defs>
     <g id="square">
-        <rect x="0" y="0" width="50" height="50" />
+      <rect x="0" y="0" width="50" height="50"></rect>
     </g>
   </defs>
-
-  <use xlink:href="#square" x="0" y="0" />
-  <use xlink:href="#square" x="55" y="0" />
-  <use xlink:href="#square" x="110" y="0" />
-
-  <use xlink:href="#square" x="0" y="55" />
-  <use xlink:href="#square" x="55" y="55" />
-  <use xlink:href="#square" x="110" y="55" />
-
-  <use xlink:href="#square" x="0" y="110" />
-  <use xlink:href="#square" x="55" y="110" />
-  <use xlink:href="#square" x="110" y="110" />
-
+  <use xlink:href="#square" x="0" y="0"></use>
+  <use xlink:href="#square" x="55" y="0"></use>
+  <use xlink:href="#square" x="110" y="0"></use>
+  <use xlink:href="#square" x="0" y="55"></use>
+  <use xlink:href="#square" x="55" y="55"></use>
+  <use xlink:href="#square" x="110" y="55"></use>
+  <use xlink:href="#square" x="0" y="110"></use>
+  <use xlink:href="#square" x="55" y="110"></use>
+  <use xlink:href="#square" x="110" y="110"></use>
 </svg>
