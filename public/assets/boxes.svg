@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" version="1.1">
+
+ <defs>
+    <g id="square">
+        <rect x="0" y="0" width="50" height="50" />
+    </g>
+  </defs>
+
+  <use xlink:href="#square" x="0" y="0" />
+  <use xlink:href="#square" x="55" y="0" />
+  <use xlink:href="#square" x="110" y="0" />
+
+  <use xlink:href="#square" x="0" y="55" />
+  <use xlink:href="#square" x="55" y="55" />
+  <use xlink:href="#square" x="110" y="55" />
+
+  <use xlink:href="#square" x="0" y="110" />
+  <use xlink:href="#square" x="55" y="110" />
+  <use xlink:href="#square" x="110" y="110" />
+
+</svg>
