@@ -13,15 +13,23 @@ html, body {
 .icon-plus {
     min-width: 10px !important;
     border-color: #c3c2cf !important;
-    background-color: #77CC66 !important;
     background: url('assets/plus.svg') no-repeat center center;
   }
+
+.icon-plus:hover {
+    background-color: #77CC66 !important;
+}
+
   
 .icon-minus {
     min-width: 10px !important;
     border-color: #c3c2cf !important;
-    background-color: #da5c5c !important;
     background: url('assets/minus.svg') no-repeat center center;
+}
+
+.icon-minus:hover {
+    background-color: #C71414 !important;
+
 }
 
 /*
