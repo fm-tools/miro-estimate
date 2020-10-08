@@ -13,13 +13,13 @@ html, body {
 .icon-plus {
     border-color: #c3c2cf !important;
     background-color: #77CC66 !important;
-    background: url('public/assets/plus.svg') no-repeat center center;
+    background: url('assets/plus.svg') no-repeat center center;
   }
   
 .icon-minus {
     border-color: #c3c2cf !important;
     background-color: #da5c5c !important;
-    background: url('public/assets/minus.svg') no-repeat center center;
+    background: url('assets/minus.svg') no-repeat center center;
 }
 
 /*
