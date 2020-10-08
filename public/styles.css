@@ -11,12 +11,14 @@ html, body {
 }
 
 .icon-plus {
+    min-width: 10px !important;
     border-color: #c3c2cf !important;
     background-color: #77CC66 !important;
     background: url('assets/plus.svg') no-repeat center center;
   }
   
 .icon-minus {
+    min-width: 10px !important;
     border-color: #c3c2cf !important;
     background-color: #da5c5c !important;
     background: url('assets/minus.svg') no-repeat center center;
@@ -40,6 +42,7 @@ html, body {
 }
 
 .modal-input-row {
+    padding: 4px 0;
     display: flex;
 }
 
