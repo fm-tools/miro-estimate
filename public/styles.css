@@ -55,8 +55,8 @@ html, body {
  * Bottom Bar
  */
  .bottombar-container {
-    width: 200px;
-    height: 90px;
+    width: 220px;
+    height: 100px;
     padding: 4px 10px;
 }
 
@@ -67,7 +67,7 @@ html, body {
 }
 
 .bottombar-section {
-    margin: 15px auto;
+    margin: 10px auto;
 }
 
 .bottombar-input-row {
