@@ -10,6 +10,17 @@ html, body {
     margin-left: 15px;
 }
 
+.icon-plus {
+    border-color: #c3c2cf !important;
+    background-color: #77CC66 !important;
+    background: url('public/assets/plus.svg') no-repeat center center;
+  }
+  
+.icon-minus {
+    border-color: #c3c2cf !important;
+    background-color: #da5c5c !important;
+    background: url('public/assets/minus.svg') no-repeat center center;
+}
 
 /*
  * Modal
@@ -37,6 +48,39 @@ html, body {
     margin: 0 10px;
 }
 
+/*
+ * Bottom Bar
+ */
+ .bottombar-container {
+    width: 200px;
+    height: 90px;
+    padding: 4px 10px;
+}
+
+.bottombar-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bottombar-section {
+    margin: 15px auto;
+}
+
+.bottombar-input-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: none;
+}
+
+.bottombar-input-number {
+    width: 50px;
+    text-align: center;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    margin: 0 1px 0 0 !important;
+}
 
 /*
  * Sidebar
