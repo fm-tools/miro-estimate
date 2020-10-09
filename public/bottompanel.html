@@ -18,9 +18,11 @@
                 <div class="bottompanel-input-row">
                     <span class="miro-h4">Estimate</span>
                     <div id="estimate-group" class="miro-input-group miro-input-group--small">
-                        <button class="miro-btn miro-btn--secondary icon-minus js-estimate-plus-minus" value="-1"></button>
+                        <button class="miro-btn miro-btn--secondary icon-minus js-estimate-plus-minus"
+                            value="-1"></button>
                         <input type="text" class="bottompanel-input-number miro-input miro-input--primary js-estimate">
-                        <button class="miro-btn miro-btn--secondary icon-plus js-estimate-plus-minus" value="1"></button>
+                        <button class="miro-btn miro-btn--secondary icon-plus js-estimate-plus-minus"
+                            value="1"></button>
                     </div>
                 </div>
                 <div class="bottompanel-input-row">
@@ -45,10 +47,18 @@
         let logInputElement = document.querySelector('.js-log');
         let logPlusMinusElements = document.querySelectorAll('.js-log-plus-minus');
 
-        registerListeners();
+        // Wait for Miro to be ready
+        miro.onReady(async () => {
+            registerListeners();
+        });
 
         // Registers listeners to clicks, enters etc.
         function registerListeners() {
+
+            miro.addListener('SELECTION_UPDATED', async function (event) {
+                miro.board.ui.closeBottomPanel();
+            });
+
             estimatePlusMinusElements.forEach(element => {
                 element.addEventListener('click', (event) => { changeInputValue(estimateInputElement, event.target.value) });
             });
