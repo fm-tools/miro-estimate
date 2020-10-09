@@ -6,6 +6,8 @@ function changeInputValue(element, delta) {
     }
 
     element.value = (parseFloat(estimate) + parseInt(delta) >= 0 ? parseFloat(estimate) + parseInt(delta) : 0).toString();
+
+    return element.value
 }
 
 function isNumeric(value) {

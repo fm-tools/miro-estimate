@@ -47,8 +47,18 @@
         let logInputElement = document.querySelector('.js-log');
         let logPlusMinusElements = document.querySelectorAll('.js-log-plus-minus');
 
+        // Place to cache info about current modal
+        let modalInfo = {};
+
         // Wait for Miro to be ready
         miro.onReady(async () => {
+
+            // Cache these values, they won't change during the runtime
+            modalInfo = {
+                widgets: await miro.board.selection.get(),
+                userId: await miro.currentUser.getId()
+            };
+
             registerListeners();
         });
 
@@ -56,12 +66,50 @@
         function registerListeners() {
 
             estimatePlusMinusElements.forEach(element => {
-                element.addEventListener('click', (event) => { changeInputValue(estimateInputElement, event.target.value) });
+                element.addEventListener('click', (event) => {
+                    let val = changeInputValue(estimateInputElement, event.target.value);
+                    updateEstimates(val)
+                });
             });
 
             logPlusMinusElements.forEach(element => {
                 element.addEventListener('click', (event) => { changeInputValue(logInputElement, event.target.value) });
             });
+        }
+
+        // Update the estimates for the widget
+        function updateEstimates(value) {
+            let widgetsToUpdate = [];
+
+            modalInfo.widgets.forEach((widget) => {
+
+                let metadata = widget.metadata;
+
+                // If our app didn't write any estimate for this widget before, we
+                // need to create the whole structure anew
+                if (metadata[Config.app_id] === undefined) {
+                    metadata = { [Config.app_id]: { "estimate": value } };
+                } else {
+                    // We already have the structure ready, let's just write new value
+                    metadata[Config.app_id].estimate = value;
+                }
+
+                widgetsToUpdate.push({
+                    id: widget.id,
+                    card: {
+                        customFields: [{
+                            value: `${metadata[Config.app_id].logged} / ${metadata[Config.app_id].estimate}`,
+                            iconUrl: "https://cdn2.iconfinder.com/data/icons/dark-action-bar-2/96/select_all-512.png"
+                        }]
+                    },
+                    metadata: metadata
+                });
+            });
+
+            // Store new metadata in bulk
+            if (widgetsToUpdate.length > 0) {
+                await miro.board.widgets.update(widgetsToUpdate);
+            }
         }
     </script>
 </body>
