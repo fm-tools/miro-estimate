@@ -62,30 +62,31 @@ html, body {
 /*
  * Bottom Bar
  */
- .bottombar-container {
+ .bottompanel-container {
     width: 220px;
     height: 100px;
     padding: 4px 10px;
 }
 
-.bottombar-content {
+.bottompanel-content {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-.bottombar-section {
+.bottompanel-section {
     margin: 10px;
 }
 
-.bottombar-input-row {
+.bottompanel-input-row {
+    padding: 4px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex: none;
 }
 
-.bottombar-input-number {
+.bottompanel-input-number {
     width: 50px;
     text-align: center;
     border-left: 0 !important;

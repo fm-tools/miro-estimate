@@ -19,7 +19,7 @@ miro.onReady(() => {
                   tooltip: 'Estimate',
                   svgIcon: Config.icon,
                   onClick: (widgets) => {
-                    miro.board.ui.openModal('public/modal.html', Config.modal_options)
+                    miro.board.ui.openBottomPanel('public/bottompanel.html', Config.bottompanel_options)
                   }
               }
           }

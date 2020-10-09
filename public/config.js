@@ -11,6 +11,10 @@ const Config = {
     modal_options: {
         width: 300,
         height: 250
+    }, 
+    bottompanel_options: {
+        width: 240,
+        height: 100
     },
     team_api: 'https://fm-tools.github.io/miro-estimate/public/team',
     auth_api: 'https://fm-tools.github.io/miro-estimate/public/auth',
