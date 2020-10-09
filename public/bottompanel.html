@@ -58,7 +58,7 @@
         function registerListeners() {
 
             miro.addListener('SELECTION_UPDATED', async function (event) {
-                const widgets = miro.board.selection.get();
+                let widgets = await miro.board.selection.get();
                 if (widgets.length > 0) {
                     isPanelOpen = miro.board.ui.openBottomPanel('public/bottompanel.html', Config.bottompanel_options);
                 } else {
