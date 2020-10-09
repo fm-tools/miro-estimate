@@ -74,13 +74,13 @@
 
             logPlusMinusElements.forEach(element => {
                 element.addEventListener('click', (event) => { 
-                    changeInputValue(logInputElement, event.target.value) 
+                    let val = changeInputValue(logInputElement, event.target.value) 
                     updateEstimates(val, 'logged')});
             });
         }
 
         // Update the estimates for the widget
-        async function updateEstimates(estimate, type) {
+        async function updateEstimates(value, type) {
 
             let widgetsToUpdate = [];
 
