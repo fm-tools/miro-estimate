@@ -47,6 +47,8 @@
         let logInputElement = document.querySelector('.js-log');
         let logPlusMinusElements = document.querySelectorAll('.js-log-plus-minus');
 
+        let isPanelOpen;
+
         // Wait for Miro to be ready
         miro.onReady(async () => {
             registerListeners();
@@ -56,7 +58,12 @@
         function registerListeners() {
 
             miro.addListener('SELECTION_UPDATED', async function (event) {
-                miro.board.ui.closeBottomPanel();
+                const widgets = miro.board.selection.get();
+                if (widgets.length > 0) {
+                    isPanelOpen = miro.board.ui.openBottomPanel('public/bottompanel.html', Config.bottompanel_options);
+                } else {
+                    await miro.board.ui.closeBottomPanel();
+                }
             });
 
             estimatePlusMinusElements.forEach(element => {
