@@ -81,6 +81,8 @@
         async function updateEstimates(value) {
             let widgetsToUpdate = [];
 
+            console.log(`update widgets for app: ${Config.app_id}`);
+
             modalInfo.widgets.forEach((widget) => {
 
                 let metadata = widget.metadata;
