@@ -57,15 +57,6 @@
         // Registers listeners to clicks, enters etc.
         function registerListeners() {
 
-            miro.addListener('SELECTION_UPDATED', async function (event) {
-                let widgets = await miro.board.selection.get();
-                if (widgets.length > 0) {
-                    isPanelOpen = miro.board.ui.openBottomPanel('public/bottompanel.html', Config.bottompanel_options);
-                } else {
-                    await miro.board.ui.closeBottomPanel();
-                }
-            });
-
             estimatePlusMinusElements.forEach(element => {
                 element.addEventListener('click', (event) => { changeInputValue(estimateInputElement, event.target.value) });
             });
