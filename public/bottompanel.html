@@ -81,8 +81,6 @@
         async function updateEstimates(value) {
             let widgetsToUpdate = [];
 
-            console.log(`update widgets for app: ${Config.app_id}`);
-
             modalInfo.widgets.forEach((widget) => {
 
                 let metadata = widget.metadata;
@@ -110,6 +108,9 @@
 
             // Store new metadata in bulk
             if (widgetsToUpdate.length > 0) {
+                
+                console.log(`try update widgets for app: ${Config.app_id}`);
+                console.log(widgetsToUpdate);
                 await miro.board.widgets.update(widgetsToUpdate);
             }
         }
