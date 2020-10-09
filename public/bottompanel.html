@@ -68,17 +68,20 @@
             estimatePlusMinusElements.forEach(element => {
                 element.addEventListener('click', (event) => {
                     let val = changeInputValue(estimateInputElement, event.target.value);
-                    updateEstimates(val)
+                    updateEstimates(val, 'estimate');
                 });
             });
 
             logPlusMinusElements.forEach(element => {
-                element.addEventListener('click', (event) => { changeInputValue(logInputElement, event.target.value) });
+                element.addEventListener('click', (event) => { 
+                    changeInputValue(logInputElement, event.target.value) 
+                    updateEstimates(val, 'logged')});
             });
         }
 
         // Update the estimates for the widget
-        async function updateEstimates(value) {
+        async function updateEstimates(estimate, type) {
+
             let widgetsToUpdate = [];
 
             modalInfo.widgets.forEach((widget) => {
@@ -88,10 +91,11 @@
                 // If our app didn't write any estimate for this widget before, we
                 // need to create the whole structure anew
                 if (metadata[Config.app_id] === undefined) {
-                    metadata = { [Config.app_id]: { "estimate": value } };
+                    let alttype = type === "estimate" ? "logged" : "estimate";
+                    metadata = { [Config.app_id]: { [type]: value,  [alttype]: 0 } };
                 } else {
                     // We already have the structure ready, let's just write new value
-                    metadata[Config.app_id].estimate = value;
+                    metadata[Config.app_id][type] = value;
                 }
 
                 widgetsToUpdate.push({
@@ -108,9 +112,6 @@
 
             // Store new metadata in bulk
             if (widgetsToUpdate.length > 0) {
-                
-                console.log(`try update widgets for app: ${Config.app_id}`);
-                console.log(widgetsToUpdate);
                 await miro.board.widgets.update(widgetsToUpdate);
             }
         }
